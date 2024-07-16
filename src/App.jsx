@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from './Card.jsx';
+import Card from './Card.jsx';  // Asegúrate de importar el componente Card si es necesario
 import './App.css';
 
 const App = () => {
@@ -28,10 +28,10 @@ const App = () => {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();  
-    
+    event.preventDefault();  // Evita el comportamiento por defecto del formulario (recargar la página)
+
     try {
-      const response = await fetch(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=azhXkHJtLitKbtDalJJk7xYTeHZigIB2&limit=20`);
+      const response = await fetch(`https://api.giphy.com/v1/gifs/search?q=${encodeURIComponent(query)}&api_key=azhXkHJtLitKbtDalJJk7xYTeHZigIB2&limit=20`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -42,8 +42,7 @@ const App = () => {
     }
   };
 
-
-return (
+  return (
     <div className="container">
       <h2 className="mt-4 mb-4">Búsqueda de GIFs</h2>
       <form onSubmit={handleSubmit} className="mb-4">
@@ -52,6 +51,8 @@ return (
             type="text"
             className="form-control"
             placeholder="Buscar GIFs..."
+            value={query}  // Vincula el valor del input con el estado 'query'
+            onChange={handleChange}  // Maneja el evento de cambio para actualizar 'query'
           />
           <div className="input-group-append">
             <button type="submit" className="btn btn-primary">
@@ -82,4 +83,5 @@ return (
 };
 
 export default App;
+
 

@@ -1,19 +1,68 @@
+
+.container {
+  background-color: #e05353; /* Cambia el color de fondo del contenedor principal */
+  padding: 20px; /* Añade relleno al contenedor principal para separar del borde */
+  min-height: calc(100vh - 40px); /* Ajusta el mínimo de altura restando el padding */
+  display: flex;
+  flex-direction: column;
+}
+
+
+h2 {
+  margin-left: 38em;
+  color: #fff;
+
+}
+/* Estilos para el formulario de búsqueda y el botón */
+.input-group {
+  margin-bottom: 1em; 
+  margin-left: 40em ;/* Espacio en la parte inferior del grupo de entrada */
+}
+
+.form-control {
+
+  width: 40%; /* Ancho del input */
+  border-radius: 4px; /* Bordes redondeados */
+  
+}
+
+.btn-primary {
+  margin-top: 2em;
+  background-color: #007bff; /* Color de fondo del botón primario */
+  border-color: #007bff; /* Color del borde del botón primario */
+  color: #fff; /* Color del texto del botón primario */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+  margin-left: 20em;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Cambio de color de fondo al pasar el mouse */
+  border-color: #0056b3; /* Cambio de color del borde al pasar el mouse */
+}
+
 .gif-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 5 columnas con ancho flexible */
-  gap: 14px; 
+display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas con ancho flexible */
+  gap: 85px; 
+  margin-left: 4em;
+  margin-top: 5em;
 }
 
 .gif-item {
-  width: 84em;
-  height: 14em;
-  margin-top:14em;
-padding-bottom: 14em;
+  width: 40em; /* Ajusta el ancho al 100% del contenedor */
+  height: 0; /* Inicializamos la altura a 0 */
+  padding-bottom: 100%; /* Mantenemos el aspecto cuadrado */
+  position: relative;
+  overflow: hidden;
 }
 
-.card {
-  width: 74em; 
+.gif-item img {
+  position: absolute;
+  width: 100%; /* Ajustamos la imagen al 100% del contenedor */
+  height: 100%; /* Ajustamos la imagen al 100% del contenedor */
+  object-fit: cover; /* Ajustamos la imagen para que cubra todo el espacio disponible */
 }
+
 
 @media (max-width: 992px) {
   .gif-grid {

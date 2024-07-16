@@ -1,5 +1,7 @@
+
 import React from 'react';
 
+// Componente funcional Card
 function Card({ nameCharacter, imgCharacter, genderCharacter }) {
   return (
     <div className="card">
